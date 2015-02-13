@@ -24,7 +24,7 @@ if echo "$url" | grep -q -E "$ignored_ext"; then
 else
 	xterm -title "surf: Downloading" -e /bin/sh -c "cd $d_dir;
 	# filename=\"\`curl -J -L -O --user-agent '$user_agent' --referer '$referer' -b '$cookie_file' -c '$cookie_file' --write-out '%{filename_effective}' '$url'\`\"
-	wget -v --progress=bar:force --content-disposition --load-cookies '$cookie_file' --save-cookies '$cookie_file' --referer='$referer' --user-agent='$user_agent' '$url' 2>&1 | tee -a '$logfile'
+	wget -v --progress=bar:force --content-disposition --load-cookies '$cookie_file' --referer='$referer' --user-agent='$user_agent' '$url' 2>&1 | tee -a '$logfile'
 	filename=\"\`tail -n 10 '$logfile' | grep -E '^Saving to: ‘.*’' | sed -r 's/^Saving to: ‘(.*)’.*/\1/' \`\"
 	
 	# if echo \"\$filename\" | grep -q -E '$show_mime'; then
