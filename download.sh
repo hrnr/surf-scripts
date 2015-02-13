@@ -15,6 +15,7 @@ show_mime='(application/pdf)|(application/postscript)'
 d_dir="~/Downloads"
 
 logfile=~/.surf/downloads.log
+loghistory=150
 
 # download name tempfile
 # tempfile=`mktemp`
@@ -36,3 +37,5 @@ else
 	sleep 30
 	"
 fi
+
+tail -n $loghistory > "logfile.1"; mv "logfile.1" "logfile"
