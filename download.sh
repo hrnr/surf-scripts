@@ -38,4 +38,4 @@ else
 	"
 fi
 
-tail -n $loghistory > "logfile.1"; mv "logfile.1" "logfile"
+tail -n $loghistory "$logfile" > "$logfile.1"; mv "$logfile.1" "$logfile"
