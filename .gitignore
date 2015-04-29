@@ -1,2 +1,5 @@
 *.log
 *.txt
+cookies*
+*.js
+style.css
